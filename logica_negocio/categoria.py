@@ -28,6 +28,7 @@ def listar(motor):
 
 
 def selecionar(motor):
+
     nome_parcial = input("Digite uma parte do nome da categoria desejada: ")
     stmt = select(Categoria).where(Categoria.nome.ilike(f"%{nome_parcial}%")).order_by("nome")
     with Session(motor) as sessao:
